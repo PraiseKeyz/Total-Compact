@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import hero1 from '../assets/heroimage1.jpg'
 import hero2 from '../assets/heroimage2.jpg'
@@ -23,7 +24,7 @@ const HomePage = () => {
     return (
         <div>
             <motion.section
-                className="relative flex min-h-[85vh]"
+                className="relative flex min-h-[85vh] md:min-h-[50vh] lg:min-h-screen"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -94,7 +95,7 @@ const HomePage = () => {
                 </div>
             </motion.section>
 
-            <motion.section className="container mx-auto flex flex-col md:flex-row min-h-[85vh] py-8 px-4 items-center gap-8">
+            <motion.section className="container mx-auto flex flex-col md:flex-row lg:min-h-screen md:min-h-[30vh] py-8 px-4 items-center gap-8">
                 {/* Images Stack */}
                 <div className="relative w-full md:w-1/2 h-[500px]">
                     <img 
@@ -188,7 +189,7 @@ const HomePage = () => {
                     >
                         We provide the best service for you...
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                         {/* Feature Box 1 */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -283,7 +284,7 @@ const HomePage = () => {
                         Our Projects
                     </motion.h2>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                         {[
                             {
                                 title: "Luxury Villa Complex",
@@ -361,7 +362,7 @@ const HomePage = () => {
                         The Right Choice for Your Real Estate Journey
                     </motion.h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                         {[
                             {
                                 title: "Trusted Experience",
@@ -419,14 +420,14 @@ const HomePage = () => {
                     >
                         <h3 className="text-2xl font-bold mb-4 text-gray-800">Ready to Start Your Journey?</h3>
                         <p className="text-gray-600 mb-6">Let us help you find the perfect property that matches your dreams.</p>
-                        <button className="bg-tertiary text-white px-8 py-3 rounded-lg hover:bg-tertiary/90 transition-colors">
+                        <Link to='/contact' className="bg-tertiary text-white px-8 py-3 rounded-lg hover:bg-tertiary/90 transition-colors">
                             Contact Us Today
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
             </motion.section>
 
-            <motion.section className="py-16">
+            <motion.section className="py-16 bg-gray-100">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row gap-8">
                         {/* Left side with image */}
