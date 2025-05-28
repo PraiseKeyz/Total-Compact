@@ -153,8 +153,8 @@ const Header = () => {
                                 </Link>
 
                                 <div className="py-3 border-b border-gray-100">
-                            <button 
-                                className="flex items-center justify-between hover:text-tertiary  w-full text-xl font-medium text-gray-700"
+                                <button 
+                                className="flex items-center gap-2 hover:text-tertiary text-xl font-medium text-gray-700"
                                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                             >
                                 Services

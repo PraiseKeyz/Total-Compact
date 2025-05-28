@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import image1 from '../assets/service.image1.jpg'
 
 const serviceData = [
     {
@@ -21,7 +22,7 @@ const serviceData = [
             "Documentation and legal review",
             "Transaction completion and handover"
         ],
-        image: "/src/assets/service.image1.jpg"
+        image: image1
     },
     // Add more services here
 ]
@@ -99,7 +100,7 @@ const Services = () => {
                                 </div>
 
                                 {/* Right Image Column */}
-                                <div className="lg:w-2/5">
+                                <div className="hidden md:block lg:w-2/5">
                                     <div className="">
                                         <div className="aspect-[1/1] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                                             <img 
