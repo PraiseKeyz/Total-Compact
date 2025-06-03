@@ -30,7 +30,7 @@ const Header = () => {
     }, [isMenuOpen]);
 
     const serviceLinks = [
-        { name: 'Real Estate', href: '/services#real-eststae' },
+        { name: 'Real Estate', href: '/services#real-estate' },
         { name: 'Construction and Renovation', href: '/services#construction' },
         { name: 'Property Management', href: '/services#management' },
     ];
@@ -355,7 +355,7 @@ export default Header;
 //                 </div>
 
 //                 {/* Mobile Navigation */}
-//                 <div className={`
+//                 <div classnpm run dName={`
 //                     fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out
 //                     ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}
 //                     md:hidden

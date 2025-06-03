@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion'
 import image1 from '../assets/service.image1.jpg'
+import image2 from '../assets/service.image2.jpg'
+import image3 from '../assets/service.image3.jpg'
+import { Link } from 'react-router-dom'
 
 const serviceData = [
     {
@@ -23,11 +26,11 @@ const serviceData = [
             "Documentation and legal review",
             "Transaction completion and handover"
         ],
-        image: image1
+        image: image2
     },
     {
         id: 2,
-        href: "construction-renovation",
+        href: "construction",
         title: "Construction & Renovation",
         description: "From groundbreaking to finishing touches, our construction and renovation services deliver high-quality craftsmanship and innovative solutions tailored to your vision. Whether you're building from scratch or upgrading existing spaces, we ensure precision, durability, and style at every stage of the project.",
         benefits: [
@@ -50,7 +53,7 @@ const serviceData = [
     },
     {
         id: 3,
-        href: "property-management",
+        href: "management",
         title: "Property Management",
         description: "Our property management services are designed to protect your investment and maximize its returns. From tenant sourcing to maintenance, we handle all aspects with professionalism and efficiency, giving you peace of mind and freeing up your time.",
         benefits: [
@@ -79,12 +82,17 @@ const Services = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <div className="relative bg-primary/10 py-24">
+            <div className="relative h-[60vh] py-24 bg-black/60 bg-blend-overlay" 
+                 style={{ 
+                    backgroundImage: `url(${image3})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                 }}
+            >
                 <div className="container mx-auto px-4">
-                    <h1 className="text-5xl font-bold text-gray-900 mb-6">Our Services</h1>
-                    <p className="text-xl text-gray-600 max-w-2xl">Comprehensive solutions for all your real estate and construction needs, delivered with expertise and dedication.</p>
+                    <h1 className="text-5xl font-bold text-white mb-6">Our Services</h1>
+                    <p className="text-xl text-white/90 max-w-2xl">Comprehensive solutions for all your real estate and construction needs, delivered with expertise and dedication.</p>
                 </div>
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
             </div>
 
             {/* Services List */}
@@ -139,12 +147,12 @@ const Services = () => {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <button className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                                        <Link to='/contact' className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
                                             Request Service
-                                        </button>
-                                        <button className="border border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary/10 transition-colors">
+                                        </Link>
+                                        {/* <button className="border border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary/10 transition-colors">
                                             Learn More
-                                        </button>
+                                        </button> */}
                                     </div>
                                 </div>
 
@@ -171,9 +179,9 @@ const Services = () => {
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
                     <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">Contact us today to discuss your project needs and discover how we can help bring your vision to life.</p>
-                    <button className="bg-primary text-white py-3 px-8 rounded-lg hover:bg-primary/90 transition-colors">
+                    <Link to='/contact' className="bg-primary text-white py-3 px-8 rounded-lg hover:bg-primary/90 transition-colors">
                         Contact Us Now
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

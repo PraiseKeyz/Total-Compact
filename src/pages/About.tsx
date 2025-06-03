@@ -9,7 +9,7 @@ const About = () => {
         <div className="min-h-screen">
             {/* Hero Section with Parallax Effect */}
             <motion.section
-                className="relative flex min-h-[85vh] md:min-h-[50vh] lg:min-h-screen overflow-hidden"
+                className="relative flex min-h-[85vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import image1 from '../assets/contact.image1.jpg'
 
 const Contacts = () => {
     const [formData, setFormData] = useState({
@@ -25,10 +26,16 @@ const Contacts = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <div className="bg-primary/10 py-16">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900">Contact Us</h1>
-                    <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+            <div className="relative h-[60vh] w-full flex items-center bg-black/60 bg-blend-overlay" 
+                style={{ 
+                    backgroundImage: `url(${image1})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
+            >
+                <div className="container mx-auto px-4 text-white">
+                    <h1 className="text-5xl font-bold text-left ">Contact Us</h1>
+                    <p className="text-left mt-4 max-w-2xl text-xl">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
                 </div>
             </div>
 
@@ -84,7 +91,7 @@ const Contacts = () => {
                             </div>
                             <button
                                 type="submit"
-                                className="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-primary/90 transition duration-200 transform hover:-translate-y-1"
+                                className="w-full bg-primary cursor-pointer text-white font-semibold py-3 rounded-lg hover:bg-primary/90 transition duration-200 transform hover:-translate-y-1"
                             >
                                 Send Message
                             </button>
@@ -124,7 +131,7 @@ const Contacts = () => {
                         {/* Map */}
                         <div className="bg-white rounded-2xl shadow-xl p-8 h-[400px] overflow-hidden">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596698663!2d-74.25987368715491!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1644332274352!5m2!1sen!2s"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7893.071720911243!2d4.5603851004885145!3d8.447154380047305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1037b3feae792b51%3A0xeaf29aed30b28c8f!2sGBOSE%20AUTOS!5e0!3m2!1sen!2sng!4v1748950008815!5m2!1sen!2sng"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
