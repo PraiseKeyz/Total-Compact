@@ -30,10 +30,9 @@ const Header = () => {
     }, [isMenuOpen]);
 
     const serviceLinks = [
-        { name: 'Property Management', href: '/services#property-management' },
-        { name: 'Real Estate Consulting', href: '/services#consulting' },
-        { name: 'Property Valuation', href: '/services#valuation' },
-        { name: 'Investment Advisory', href: '/services#investment' },
+        { name: 'Real Estate', href: '/services#real-eststae' },
+        { name: 'Construction and Renovation', href: '/services#construction' },
+        { name: 'Property Management', href: '/services#management' },
     ];
 
     return (

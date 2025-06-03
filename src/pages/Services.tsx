@@ -4,6 +4,7 @@ import image1 from '../assets/service.image1.jpg'
 const serviceData = [
     {
         id: 1,
+        href: "real-estate",
         title: "Real Estate Buying & Selling",
         description: "Expert guidance through every step of your real estate journey, ensuring seamless transactions and optimal value for your property investments. Our comprehensive real estate services cater to both buyers and sellers, providing personalized solutions that meet your specific needs. With our deep market knowledge and extensive network, we help you make informed decisions and achieve your real estate goals efficiently.",
         benefits: [
@@ -24,7 +25,54 @@ const serviceData = [
         ],
         image: image1
     },
-    // Add more services here
+    {
+        id: 2,
+        href: "construction-renovation",
+        title: "Construction & Renovation",
+        description: "From groundbreaking to finishing touches, our construction and renovation services deliver high-quality craftsmanship and innovative solutions tailored to your vision. Whether you're building from scratch or upgrading existing spaces, we ensure precision, durability, and style at every stage of the project.",
+        benefits: [
+            "Customized architectural planning",
+            "End-to-end project management",
+            "Use of high-quality materials",
+            "Compliance with safety and building standards",
+            "On-time and within-budget delivery",
+            "Sustainable and energy-efficient designs"
+        ],
+        process: [
+            "Project consultation and feasibility assessment",
+            "Design planning and budgeting",
+            "Permit acquisition and approvals",
+            "Construction or renovation execution",
+            "Regular progress updates and quality checks",
+            "Final inspection and client handover"
+        ],
+        image: image1
+    },
+    {
+        id: 3,
+        href: "property-management",
+        title: "Property Management",
+        description: "Our property management services are designed to protect your investment and maximize its returns. From tenant sourcing to maintenance, we handle all aspects with professionalism and efficiency, giving you peace of mind and freeing up your time.",
+        benefits: [
+            "Reliable tenant screening and placement",
+            "Timely rent collection and financial reporting",
+            "Regular property inspections and maintenance",
+            "Handling of tenant inquiries and issues",
+            "Legal compliance and lease management",
+            "Vacancy reduction strategies"
+        ],
+        process: [
+            "Property evaluation and onboarding",
+            "Marketing and tenant acquisition",
+            "Lease drafting and execution",
+            "Ongoing management and maintenance",
+            "Monthly reporting and updates",
+            "Renewals or tenant transition handling"
+        ],
+        image: image1
+    }
+    
+    
 ]
 
 const Services = () => {
@@ -44,6 +92,7 @@ const Services = () => {
                 {serviceData.map((service, index) => (
                     <motion.section
                         key={service.id}
+                        id={service.href}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}

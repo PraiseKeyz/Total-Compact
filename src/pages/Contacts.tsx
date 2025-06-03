@@ -101,21 +101,21 @@ const Contacts = () => {
                                     <FaMapMarkerAlt className="text-primary text-xl mt-1" />
                                     <div>
                                         <h3 className="font-medium">Address</h3>
-                                        <p className="text-gray-600">123 Business Avenue<br />Suite 100<br />New York, NY 10001</p>
+                                        <p className="text-gray-600">No. 4 South Link<br />Beside Gbose Autos<br />Asa-dam Road, Ilorin</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-4">
                                     <FaPhone className="text-primary text-xl" />
                                     <div>
                                         <h3 className="font-medium">Phone</h3>
-                                        <p className="text-gray-600">+1 (555) 123-4567</p>
+                                        <p className="text-gray-600">+234 7060858436</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-4">
                                     <FaEnvelope className="text-primary text-xl" />
                                     <div>
                                         <h3 className="font-medium">Email</h3>
-                                        <p className="text-gray-600">contact@yourcompany.com</p>
+                                        <p className="text-gray-600">info@totalcompact.com</p>
                                     </div>
                                 </div>
                             </div>

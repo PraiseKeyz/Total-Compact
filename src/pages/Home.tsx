@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import hero1 from '../assets/heroimage1.jpg'
 import hero2 from '../assets/heroimage2.jpg'
 import heroBg from '../assets/herrosectionbacground.jpg'
+import project1 from '../assets/project1.jpg'
 
 const HomePage = () => {
     const [currentImage, setCurrentImage] = useState(0);
@@ -117,7 +118,7 @@ const HomePage = () => {
                         transition={{ delay: 0.3 }}
                     >
                         <div className="flex flex-col items-center">
-                            <span className="text-5xl font-bold mb-2">12</span>
+                            <span className="text-5xl font-bold mb-2">20</span>
                             <span className="text-lg font-medium">Years</span>
                             <span className="text-lg font-medium">Experience</span>
                         </div>
@@ -287,10 +288,10 @@ const HomePage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                title: "Luxury Villa Complex",
-                                location: "Beverly Hills, CA",
-                                image: hero1,
-                                price: "$5.2M"
+                                title: "Luxury Duplex + Bungalow",
+                                location: "Secure Area, off Asa-Dam Road",
+                                image: project1,
+                                price: "₦150M"
                             },
                             {
                                 title: "Modern Apartments",
