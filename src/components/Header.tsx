@@ -33,6 +33,7 @@ const Header = () => {
         { name: 'Real Estate', href: '/services#real-estate' },
         { name: 'Construction and Renovation', href: '/services#construction' },
         { name: 'Property Management', href: '/services#management' },
+        { name: 'IT Services', href: '/services#IT-services' },
     ];
 
     return (
@@ -100,11 +101,11 @@ const Header = () => {
 
                         {/* Desktop Navigation */}
                         <nav className="hidden md:hidden lg:flex lg:space-x-8 items-center">
-                                <Link to="/" className="text-gray-700 hover:text-tertiary md:text-sm  lg:text-xl font-medium transition-colors">Home</Link>
-                                <Link to="/about" className="text-gray-700 hover:text-tertiary md:text-sm lg:text-xl font-medium transition-colors">About Us</Link>
+                                <Link to="/" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Home</Link>
+                                <Link to="/about" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">About Us</Link>
                                 <div className="relative group">
                                     <button 
-                                        className="flex items-center text-gray-700 hover:text-tertiary text-xl cursor-pointer font-medium transition-colors"
+                                        className="flex items-center text-gray-700 hover:text-tertiary text-lg cursor-pointer font-medium transition-colors"
                                         onClick={() => setIsServicesOpen(!isServicesOpen)}
                                     >
                                         Services
@@ -122,8 +123,9 @@ const Header = () => {
                                         ))}
                                     </div>
                                 </div>
-                                <Link to="/partnerships" className="text-gray-700 hover:text-tertiary text-xl font-medium transition-colors">Partnerships</Link>
-                                <Link to="/contact" className="text-gray-700 hover:text-tertiary text-xl font-medium transition-colors">Contact</Link>
+                                <Link to="/projects" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Projects</Link>
+                                <Link to="/partnerships" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Partnerships</Link>
+                                <Link to="/contact" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Contact</Link>
                             </nav>
 
                         {/* Mobile Navigation */}
@@ -174,6 +176,13 @@ const Header = () => {
                                 ))}
                             </div>
                         </div>
+                        <Link 
+                                    to="/projects" 
+                                    className="flex items-center text-gray-700 hover:text-tertiary text-lg font-medium transition-colors duration-200 border-b border-gray-100 pb-4" 
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Projects
+                                </Link>
                         <Link 
                                     to="/partnerships" 
                                     className="flex items-center text-gray-700 hover:text-tertiary text-lg font-medium transition-colors duration-200 border-b border-gray-100 pb-4" 

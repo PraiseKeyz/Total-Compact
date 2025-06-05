@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import image1 from '../assets/service.image1.jpg'
 import image2 from '../assets/service.image2.jpg'
 import image3 from '../assets/service.image3.jpg'
+import image4 from '../assets/service.image4.jpg'
 import { Link } from 'react-router-dom'
 
 const serviceData = [
@@ -73,9 +74,30 @@ const serviceData = [
             "Renewals or tenant transition handling"
         ],
         image: image1
+    },
+    {
+        id: 4,
+        href: "IT-services",
+        title: "Comprehensive IT Solutions",
+        description: "We provide reliable and scalable IT services to help your business thrive in today's digital landscape.",
+        benefits: [
+            "Proactive monitoring and maintenance to prevent downtime",
+            "Enhanced cybersecurity to protect your data",
+            "Cloud solutions to improve collaboration and efficiency",
+            "Expert technical support available 24/7",
+            "Scalable infrastructure that grows with your business",
+            "Reduced IT costs and improved ROI"
+        ],
+        process: [
+            "Initial consultation and needs assessment",
+            "Customized solution design and implementation",
+            "Ongoing monitoring and management",
+            "Regular security audits and updates",
+            "Help desk support and troubleshooting",
+            "Strategic IT planning and consulting"
+        ],
+        image: image4,
     }
-    
-    
 ]
 
 const Services = () => {
@@ -157,7 +179,7 @@ const Services = () => {
                                 </div>
 
                                 {/* Right Image Column */}
-                                <div className="hidden md:block lg:w-2/5">
+                                <div className="hidden md:block md:w-4/5 lg:w-2/5">
                                     <div className="">
                                         <div className="aspect-[1/1] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                                             <img 

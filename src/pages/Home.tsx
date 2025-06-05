@@ -31,11 +31,19 @@ const HomePage = () => {
                 transition={{ duration: 0.5 }}
             >
                 {/* Left Hero Section with Background */}
-                <div className="md:w-[55%] w-full relative before:content-[''] before:absolute before:inset-0 before:bg-cover before:bg-center before:opacity-20 before:z-0 flex items-center px-12"
+                <div className="md:w-[58%] w-full relative before:content-[''] before:absolute before:inset-0 before:bg-cover before:bg-center before:opacity-20 before:z-0 flex items-center px-12"
                     style={{
                         "--bg-image": `url(${heroBg})`
                     } as React.CSSProperties}>
                     <div className="relative z-10">
+                    <motion.h3 
+                            className="text-xl text-tertiary font-bold mb-6"
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            WELCOME TO TOTAL COMPACT LTD
+                        </motion.h3>
                         <motion.h1 
                             className="text-5xl font-bold mb-6"
                             initial={{ y: 20, opacity: 0 }}
@@ -45,12 +53,12 @@ const HomePage = () => {
                             Find Your Dream Home
                         </motion.h1>
                         <motion.p 
-                            className="text-xl text-gray-600 mb-8"
+                            className="text-lg text-gray-700 mb-8"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.4 }}
                         >
-                            Discover the perfect property that matches your lifestyle and dreams
+                           We Are Your Strategic Partner for Real Estate Investment and Development. We combine market expertise, innovative solutions, and a commitment to excellence to deliver superior results.
                         </motion.p>
                         <div className="flex gap-3">
                         <motion.button 
@@ -59,7 +67,9 @@ const HomePage = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6 }}
                         >
+                            <Link to='/about'>
                             About Us
+                            </Link>
                         </motion.button>
                         <motion.button 
                             className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
@@ -67,14 +77,17 @@ const HomePage = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6 }}
                         >
-                            Projects
+                            <Link to='/conatct'>
+
+                            Contact Us
+                            </Link>
                         </motion.button>
                         </div>
                     </div>
                 </div>
 
                 {/* Right Hero Section with Changing Images */}
-                <div className="w-[45%] hidden md:block relative overflow-hidden before:content-[''] before:absolute before:top-0 before:-left-20 before:w-40 before:h-full before:bg-tertiary before:transform before:skew-x-12 before:z-10">
+                <div className="w-[45%] hidden md:block relative overflow-hidden">
                     {images.map((img, index) => (
                         <motion.div
                             key={index}
@@ -118,7 +131,7 @@ const HomePage = () => {
                         transition={{ delay: 0.3 }}
                     >
                         <div className="flex flex-col items-center">
-                            <span className="text-5xl font-bold mb-2">20</span>
+                            <span className="text-5xl font-bold mb-2">20+</span>
                             <span className="text-lg font-medium">Years</span>
                             <span className="text-lg font-medium">Experience</span>
                         </div>
@@ -155,7 +168,7 @@ const HomePage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                     >
-                        With over a decade of experience in real estate development, we've helped countless families find their perfect homes. Our commitment to quality and customer satisfaction has made us a trusted name in the industry.
+                        With over decades of experience in real estate development, we've helped countless families find their perfect homes. Our commitment to quality and customer satisfaction has made us a trusted name in the industry.
                     </motion.p>
                     <motion.button 
                         className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-secondary/90 transition-colors"
@@ -163,7 +176,9 @@ const HomePage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
                     >
+                        <Link to='/about'>
                         Learn More
+                        </Link>
                     </motion.button>
                 </div>
             </motion.section>
@@ -233,7 +248,7 @@ const HomePage = () => {
                                     </svg>
                                 </div>
                                 <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-white">Expert Consultation</h3>
-                                <p className="text-gray-600 group-hover:text-white/90">Get expert advice from our experienced real estate consultants.</p>
+                                <p className="text-gray-600 group-hover:text-white/90">Get expert advice from our experienced consultant in real estate construction and tech industry.</p>
                             </div>
                         </motion.div>
 
@@ -246,17 +261,17 @@ const HomePage = () => {
                         >
                             <img 
                                 src={hero1} 
-                                alt="Features image 3" 
+                                alt="Smart Technology" 
                                 className="w-full h-[300px] object-cover rounded-2xl" 
                             />
                             <div className="absolute bottom-4 left-4 right-4 bg-white p-6 rounded-xl shadow-lg transition-all duration-300 group-hover:bg-secondary">
                                 <div className="absolute -top-8 right-4 w-16 h-16 bg-secondary text-white rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-white group-hover:text-secondary">
-                                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4zm3 1h6v4H7V5zm8 8v2h1v-2h-1zm-2-2H7v4h6v-4zm2 0h1v2h-1v-2zm1-2V9h-1v2h1zm-5-2H7v2h6V9zm2 0h1v2h-1V9zm1-2V7h-1v2h1zm-5-2H7v2h6V7zm2 0h1v2h-1V7zm1-2V5h-1v2h1zm-5-2H7v2h6V5z" />
+                                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-white">Property Valuation</h3>
-                                <p className="text-gray-600 group-hover:text-white/90">Accurate property valuation services for your real estate.</p>
+                                <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-white">Smart Solutions</h3>
+                                <p className="text-gray-600 group-hover:text-white/90">Advanced technology integration for modern construction and property management.</p>
                             </div>
                         </motion.div>
                     </div>
@@ -320,7 +335,7 @@ const HomePage = () => {
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="absolute bottom-6 right-6 w-[45%] bg-white/95 p-4 rounded-xl shadow-lg">
-                                        <h3 className="text-lg font-bold text-gray-800 mb-1 line-clamp-1">
+                                        <h3 className="text-lg font-bold text-gray-800 mb-1 ">
                                             {project.title}
                                         </h3>
                                         <div className="flex items-center text-gray-600 text-sm mb-2">
@@ -328,7 +343,7 @@ const HomePage = () => {
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                             </svg>
-                                            <span className="line-clamp-1">{project.location}</span>
+                                            <span className="">{project.location}</span>
                                         </div>
                                         <div className="text-tertiary font-semibold">
                                             {project.price}

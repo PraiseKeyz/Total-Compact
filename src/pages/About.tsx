@@ -9,7 +9,7 @@ const About = () => {
         <div className="min-h-screen">
             {/* Hero Section with Parallax Effect */}
             <motion.section
-                className="relative flex min-h-[85vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden"
+                className="relative flex h-[60vh] overflow-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -21,23 +21,23 @@ const About = () => {
                         transition={{ duration: 1.5 }}
                         className="relative h-full"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-r from-tertiary/90 to-primary/90" />
+                        <div className="absolute inset-0 bg-black/60 bg-blend-overlay" />
                         <img src={herosection} alt="About Us Hero" className="w-full h-full object-cover" />
                     </motion.div>
                 </div>
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="flex flex-col items-center justify-center h-full py-20">
+                    <div className=" h-full py-20">
                         <motion.div
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-center"
                         >
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                                Building Dreams,<br />Creating Homes
+                            <h1 className="text-5xl font-bold text-white text-left mb-6 leading-tight">
+                                About Us
                             </h1>
-                            <p className="text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto">
-                                With over a decade of excellence in real estate, we transform your vision into reality.
+                            <p className="text-xl text-white/90 text-left max-w-2xl">
+                                With over decades of excellence in real estate, we transform your vision into reality.
                             </p>
                         </motion.div>
                     </div>
@@ -351,7 +351,7 @@ const About = () => {
                             transition={{ delay: 0.1 }}
                         >
                             <div className="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                <span className="text-3xl font-bold text-tertiary">10+</span>
+                                <span className="text-3xl font-bold text-tertiary">20+</span>
                             </div>
                             <h3 className="text-lg font-semibold text-gray-900">Years Experience</h3>
                             <p className="text-gray-600 mt-2">Industry Excellence</p>
@@ -379,7 +379,7 @@ const About = () => {
                             transition={{ delay: 0.3 }}
                         >
                             <div className="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                <span className="text-3xl font-bold text-tertiary">98%</span>
+                                <span className="text-3xl font-bold text-tertiary">100%</span>
                             </div>
                             <h3 className="text-lg font-semibold text-gray-900">Client Satisfaction</h3>
                             <p className="text-gray-600 mt-2">Trust & Quality</p>

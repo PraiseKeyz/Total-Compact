@@ -61,11 +61,11 @@ const Footer = () => {
                         <div className="space-y-4">
                             <p className="flex items-center text-gray-400">
                                 <FaMapMarkerAlt className="mr-2" />
-                                123 Real Estate Street, City, Country
+                                No. 4 South Link, Beside Gbose Autos, Asa-dam Road, Ilorin, Kwara State
                             </p>
                             <p className="flex items-center text-gray-400">
                                 <FaPhone className="mr-2" />
-                                (123) 456-7890
+                                +234 7060858436
                             </p>
                             <p className="flex items-center text-gray-400">
                                 <FaEnvelope className="mr-2" />
