@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa';
 import project1 from '../assets/service.image1.jpg';
 import project2 from '../assets/service.image1.jpg';
 import project3 from '../assets/service.image1.jpg';
+import ProjectModal from '../components/ProjectModal';
 
 interface Testimonial {
     text: string;
@@ -224,6 +225,10 @@ const Project = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Modal */}
+            {selectedProject && ( <ProjectModal selectedProject={selectedProject} setSelectedProject={setSelectedProject} />
+)}
         </div>
     );
 };
