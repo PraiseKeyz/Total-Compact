@@ -5,6 +5,8 @@ import hero1 from '../assets/heroimage1.jpg'
 import hero2 from '../assets/heroimage2.jpg'
 import heroBg from '../assets/herrosectionbacground.jpg'
 import project1 from '../assets/project1.jpg'
+import project2 from '../assets/project2.jpeg'
+import image1 from '../assets/home.image1.jpg'
 
 const HomePage = () => {
     const [currentImage, setCurrentImage] = useState(0);
@@ -45,20 +47,20 @@ const HomePage = () => {
                             WELCOME TO TOTAL COMPACT LTD
                         </motion.h3>
                         <motion.h1 
-                            className="text-5xl font-bold mb-6"
+                            className="text-4xl font-bold mb-6"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.2 }}
                         >
-                            Find Your Dream Home
+                            Driving Innovation, Building Trust, Creating Value
                         </motion.h1>
                         <motion.p 
-                            className="text-lg text-gray-700 mb-8"
+                            className="text-[1.1rem] text-gray-800 mb-8"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.4 }}
                         >
-                           We Are Your Strategic Partner for Real Estate Investment and Development. We combine market expertise, innovative solutions, and a commitment to excellence to deliver superior results.
+                          At Total Compact Ltd, we are committed to driving sustainable growth through innovation, strategic expertise, and unwavering integrity. While real estate remains a cornerstone of our operations, our capabilities extend across diverse sectors, including technology and integrated business solutions.
                         </motion.p>
                         <div className="flex gap-3">
                         <motion.button 
@@ -260,7 +262,7 @@ const HomePage = () => {
                             className="relative group"
                         >
                             <img 
-                                src={hero1} 
+                                src={image1} 
                                 alt="Smart Technology" 
                                 className="w-full h-[300px] object-cover rounded-2xl" 
                             />
@@ -309,14 +311,14 @@ const HomePage = () => {
                                 price: "₦150M"
                             },
                             {
-                                title: "Modern Apartments",
-                                location: "Downtown Manhattan, NY",
-                                image: hero2,
-                                price: "$2.8M"
+                                title: "Twin Semi-Detached Duplex",
+                                location: "Beside former Governor Wada's house. Lokoja.",
+                                image: project2,
+                                price: "₦250M"
                             },
                             {
                                 title: "Seaside Residences",
-                                location: "Miami Beach, FL",
+                                location: "Downtown, NewYork",
                                 image: hero1,
                                 price: "$3.5M"
                             }
@@ -382,7 +384,7 @@ const HomePage = () => {
                         {[
                             {
                                 title: "Trusted Experience",
-                                description: "With over 12 years of excellence in real estate, we've built a reputation for delivering exceptional results.",
+                                description: "With over 20 years of excellence in real estate, we've built a reputation for delivering exceptional results.",
                                 icon: (
                                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />

@@ -7,66 +7,32 @@ import image3 from '../assets/partnership.image3.jpg'
 const Partnerships = () => {
     const investmentOptions = [
         {
-            title: 'Direct Capital Investment',
-            description: 'Support large-scale projects',
-            minimumCommitment: '$100,000',
-            riskLevel: 'Moderate to High',
-            expectedROI: '15-25% annually',
+            title: 'Land Projects',
+            description: 'Secure fast growing land properties (through our Landee platform or estate schemes',
             timeframe: '2-5 years'
         },
         {
-            title: 'Real Estate Joint Ventures',
-            description: 'Partner on new property developments',
+            title: 'Fix & Flip Projects',
+            description: 'We acquire distressed properties, renovate them, and resell at market value',
             minimumCommitment: '$250,000',
             riskLevel: 'Moderate',
-            expectedROI: '12-20% annually',
+            expectedROI: '20% per investment cycle',
             timeframe: '3-7 years'
         },
         {
-            title: 'Material & Equipment Partnership',
-            description: 'Lease/supply returns on tools & machines',
+            title: 'Buy-to-Build Projects',
+            description: 'Invest in buildings we construct or redevelop from scratch',
             minimumCommitment: '$50,000',
             riskLevel: 'Low to Moderate',
-            expectedROI: '8-15% annually',
+            expectedROI: '20% per investment cycle',
             timeframe: '1-3 years'
-        },
-        {
-            title: 'Equity Stake Options',
-            description: 'For qualified investors only',
-            minimumCommitment: '$500,000',
-            riskLevel: 'High',
-            expectedROI: '20-30% annually',
-            timeframe: '5+ years'
-        }
-    ];
-
-    const projectPipeline = [
-        {
-            type: 'Residential',
-            description: 'Luxury apartment complex in prime location',
-            timeline: 'Q2 2024 - Q4 2025',
-            value: '$15M'
-        },
-        {
-            type: 'Commercial',
-            description: 'Modern office space development',
-            timeline: 'Q3 2024 - Q2 2026',
-            value: '$25M'
-        },
-        {
-            type: 'Renovation',
-            description: 'Historic building restoration',
-            timeline: 'Q1 2024 - Q4 2024',
-            value: '$5M'
         }
     ];
 
     const investmentSteps = [
-        'Fill out interest form',
-        'Receive our investment brochure',
-        'Schedule a strategy call',
-        'Review terms',
-        'Sign agreement & begin partnership'
+        'You partner with us',
+        'We manage the rist',
+        'You earn 20% returns'
     ];
 
     return (
@@ -196,7 +162,7 @@ const Partnerships = () => {
                                         whileInView={{ y: 0, opacity: 1 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6 }}
-                className="hidden lg:block absolute top-200 bottom-0 left-1/2 w-1 h-120 bg-primary"></motion.div>
+                className="hidden lg:block absolute top-180 bottom-0 left-1/2 w-1 h-80 bg-primary"></motion.div>
                     <motion.div
                         initial={{ x: -50, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
@@ -212,24 +178,6 @@ const Partnerships = () => {
                                         {option.title}
                                     </h4>
                                     <p className="text-gray-600 text-sm mb-4 leading-relaxed">{option.description}</p>
-                                    <ul className="space-y-2 text-sm text-gray-700">
-                                        <li className="flex items-center gap-2">
-                                            <span className="text-primary font-medium">Minimum:</span>
-                                            <span>{option.minimumCommitment}</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <span className="text-primary font-medium">Risk Level:</span>
-                                            <span>{option.riskLevel}</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <span className="text-primary font-medium">Expected ROI:</span>
-                                            <span className="text-green-600">{option.expectedROI}</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <span className="text-primary font-medium">Timeframe:</span>
-                                            <span>{option.timeframe}</span>
-                                        </li>
-                                    </ul>
                                 </div>
                             ))}
                         </div>
@@ -262,22 +210,6 @@ const Partnerships = () => {
             </div>
         </motion.section>
 
-            <section className="py-16 bg-gray-50 px-10 mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-12">Project Pipeline</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {projectPipeline.map((project, index) => (
-                        <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
-                            <h4 className="text-xl font-semibold text-tertiary mb-4">{project.type}</h4>
-                            <p className="text-gray-600 mb-4">{project.description}</p>
-                            <div className="space-y-2 text-gray-600">
-                                <p>Timeline: {project.timeline}</p>
-                                <p>Value: {project.value}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
             <section className="py-16 bg-gray-50">
                 <div className="container mx-auto px-6 lg:px-10">
                     <h2 className="text-3xl font-bold text-center">How It Works</h2>
@@ -286,7 +218,7 @@ const Partnerships = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="relative">
                             <div className="absolute left-0 top-0 w-1 bg-primary/20 h-full rounded-full">
-                                <div className="sticky top-0 w-full bg-primary h-1/3 rounded-full transition-all duration-500"></div>
+                                <div className="sticky top-20 w-full bg-primary h-1/3 rounded-full transition-all duration-500"></div>
                             </div>
                             
                             <div className="space-y-3 pl-8">
@@ -316,7 +248,7 @@ const Partnerships = () => {
                                 <img 
                                     src={image3} 
                                     alt="Investment Process" 
-                                    className="w-full h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-[400px] object-cover transform hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
                             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-tertiary rounded-full z-0 opacity-20"></div>
@@ -341,15 +273,12 @@ const Partnerships = () => {
                             
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                 <button className="px-8 py-4 bg-tertiary text-white rounded-lg hover:bg-tertiary/90 transition-colors duration-300 ">
-                                <Link to='/about' className="flex items-center gap-2 group">
+                                <Link to='/contact' className="flex items-center gap-2 group">
                                 <span>Schedule a Consultation</span>
                                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
                                 </Link>
-                                </button>
-                                <button className="px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300">
-                                    Download Investment Guide
                                 </button>
                             </div>
                         </motion.div>

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+body {
+    font-family: "open sans",   sans-serif !important;
+}
 @theme {
     --color-primary: #0031b2;
     --color-secondary: #161865;

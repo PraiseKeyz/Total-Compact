@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { FaPhone, FaEnvelope, FaFacebook, FaTwitter, FaInstagram, FaSearch, FaPlus } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaFacebook, FaTwitter, FaInstagram, FaSearch} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import lgog from '../assets/logo.png';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isServicesOpen, setIsServicesOpen] = useState(false);
+    // const [isServicesOpen, setIsServicesOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,12 +29,12 @@ const Header = () => {
         };
     }, [isMenuOpen]);
 
-    const serviceLinks = [
-        { name: 'Real Estate', href: '/services#real-estate' },
-        { name: 'Construction and Renovation', href: '/services#construction' },
-        { name: 'Property Management', href: '/services#management' },
-        { name: 'IT Services', href: '/services#IT-services' },
-    ];
+    // const serviceLinks = [
+    //     { name: 'Real Estate', href: '/services#real-estate' },
+    //     { name: 'Construction and Renovation', href: '/services#construction' },
+    //     { name: 'Property Management', href: '/services#management' },
+    //     { name: 'IT Services', href: '/services#IT-services' },
+    // ];
 
     return (
         <header>
@@ -103,7 +103,7 @@ const Header = () => {
                         <nav className="hidden md:hidden lg:flex lg:space-x-8 items-center">
                                 <Link to="/" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Home</Link>
                                 <Link to="/about" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">About Us</Link>
-                                <div className="relative group">
+                                {/* <div className="relative group">
                                     <button 
                                         className="flex items-center text-gray-700 hover:text-tertiary text-lg cursor-pointer font-medium transition-colors"
                                         onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -122,7 +122,8 @@ const Header = () => {
                                             </a>
                                         ))}
                                     </div>
-                                </div>
+                                </div> */}
+                                <Link to="/services" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Services</Link>
                                 <Link to="/projects" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Projects</Link>
                                 <Link to="/partnerships" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Partnerships</Link>
                                 <Link to="/contact" className="text-gray-700 hover:text-tertiary text-lg font-medium transition-colors">Contact</Link>
@@ -150,10 +151,17 @@ const Header = () => {
                                     className="flex items-center text-gray-700 hover:text-tertiary text-lg font-medium transition-colors duration-200 border-b border-gray-100 pb-4" 
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    About
+                                    About Us
+                                </Link>
+                                <Link 
+                                    to="/services" 
+                                    className="flex items-center text-gray-700 hover:text-tertiary text-lg font-medium transition-colors duration-200 border-b border-gray-100 pb-4" 
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Services
                                 </Link>
 
-                                <div className="py-3 border-b border-gray-100">
+                                {/* <div className="py-3 border-b border-gray-100">
                                 <button 
                                 className="flex items-center gap-2 hover:text-tertiary text-xl font-medium text-gray-700"
                                 onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -175,7 +183,7 @@ const Header = () => {
                                     </a>
                                 ))}
                             </div>
-                        </div>
+                        </div> */}
                         <Link 
                                     to="/projects" 
                                     className="flex items-center text-gray-700 hover:text-tertiary text-lg font-medium transition-colors duration-200 border-b border-gray-100 pb-4" 
