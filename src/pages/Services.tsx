@@ -27,14 +27,12 @@ const serviceData = [
             "Property Valuation & Due Diligence",
             "Facility Management Services"
           ],
-          valueProposition: "We simplify complex property transactions, reduce risk, and maximize returns through intelligent real estate solutions.",
           targetAudience: [
             "Property investors",
             "Real estate developers",
             "Private buyers/sellers",
             "Estate agencies"
           ],
-          cta: "Explore Properties & Opportunities",
           image: image2
         },
         {
@@ -49,14 +47,12 @@ const serviceData = [
             "Renovation & Remodeling",
             "Interior Finishing & Landscaping"
           ],
-          valueProposition: "We combine innovation and engineering precision to deliver cost-effective, sustainable, and beautiful structures.",
           targetAudience: [
             "Property developers",
             "Government agencies",
             "Private homeowners",
             "Contracting firms"
           ],
-          cta: "Request a Project Assessment",
           image: image1
         },
         {
@@ -71,7 +67,6 @@ const serviceData = [
             "Leadership & Team Building",
             "Change Management & Compliance"
           ],
-          valueProposition: "We help organizations adapt, innovate, and lead through expert-led development and tailored business insights.",
           targetAudience: [
             "Companies & institutions",
             "Startups & SMEs",
@@ -93,13 +88,11 @@ const serviceData = [
             "Cybersecurity Solutions",
             "Tech Support & Maintenance"
           ],
-          valueProposition: "We bridge tech innovation with business needs—helping you grow smarter, faster, and more securely.",
           targetAudience: [
             "Enterprises & startups",
             "Government & NGOs",
             "Retail & education sectors"
           ],
-          cta: "Digitize Your Business Today",
           image: image4
         },
         {
@@ -114,14 +107,12 @@ const serviceData = [
             "Business Process Automation",
             "IT Project Supervision"
           ],
-          valueProposition: "From ideation to execution, we turn complex requirements into efficient, functional software systems.",
           targetAudience: [
             "Tech startups",
             "Enterprise teams",
             "Project consultants",
             "SaaS product owners"
           ],
-          cta: "Launch Your Digital Solution",
           image: serviceSoftware
         },
         {
@@ -136,7 +127,6 @@ const serviceData = [
             "AgroTech Integration",
             "Agri-business Consultancy"
           ],
-          valueProposition: "We deliver healthy produce and empower rural economies through responsible farming and innovation.",
           targetAudience: [
             "Distributors & food suppliers",
             "Government/NGO food projects",
@@ -158,14 +148,12 @@ const serviceData = [
             "Motion Graphics & Animations",
             "Visual Content for Marketing"
           ],
-          valueProposition: "We help brands communicate boldly through memorable, modern, and strategic visual design.",
           targetAudience: [
             "Brands & startups",
             "Corporate marketing teams",
             "NGOs & creatives",
             "Event planners"
           ],
-          cta: "Bring Your Brand to Life",
           image: serviceGraphics
         },
         {
@@ -180,14 +168,12 @@ const serviceData = [
             "Style Consulting",
             "Unisex Fashion Retail"
           ],
-          valueProposition: "We combine comfort, creativity, and confidence into every product line for today's lifestyle-conscious individuals.",
           targetAudience: [
             "Fashion lovers",
             "Self-care enthusiasts",
             "Young professionals",
             "Retailers & salons"
           ],
-          cta: "Discover Your Style",
           image: serviceCare
         },
         {
@@ -202,14 +188,12 @@ const serviceData = [
             "Healthy Snack Production",
             "Restaurant Partnerships"
           ],
-          valueProposition: "We put quality, taste, and nutrition at the center of every bite—ensuring safe and satisfying food solutions.",
           targetAudience: [
             "Event organizers",
             "Supermarkets & stores",
             "Institutions & schools",
             "Households"
           ],
-          cta: "Taste the TC Difference",
           image: serviceFood
         },
         {
@@ -224,14 +208,12 @@ const serviceData = [
             "Vehicle Customization",
             "Auto Parts & Accessories"
           ],
-          valueProposition: "We drive value through dependable mobility solutions and exceptional customer support.",
           targetAudience: [
             "Private car owners",
             "Logistics companies",
             "Corporate fleets",
             "Transport agencies"
           ],
-          cta: "Drive with TC Confidence",
           image: serviceMotors
         }  
 ]
@@ -256,7 +238,7 @@ const Services = () => {
             </div>
 
             {/* Services List */}
-            <div className="container py-8 gap-8 mx-auto grid grid-cols-1 lg:grid-cols-3 px-16">
+            <div className="container py-8 gap-8 mx-auto grid grid-cols-1 lg:grid-cols-3 px-8">
                 {serviceData.map((service, index) => (
                     <motion.div 
                     className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300"
@@ -277,7 +259,11 @@ const Services = () => {
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
                         <p className="text-gray-600 text-sm line-clamp-3">{service.description}</p>
                     </div>
+                    <button className='text-primary text-sm m-5 underline'>
+                    View More
+                </button>
                 </motion.div>
+                
                 ))}
             </div>
 
