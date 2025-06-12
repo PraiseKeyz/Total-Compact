@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface ServiceModalProps {
@@ -6,6 +7,29 @@ interface ServiceModalProps {
 }
 
 const ServiceModal: React.FC<ServiceModalProps> = ({ selectedService, setSelectedService }) => {
+
+    useEffect(() => {
+        if (selectedService) {
+          document.body.style.overflow = 'hidden';
+          document.documentElement.style.overflow = 'hidden';
+          document.body.style.position = 'fixed'; 
+          document.body.style.width = '100%';
+        } else {
+          document.body.style.overflow = '';
+          document.documentElement.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.width = '';
+        }
+      
+        return () => {
+          document.body.style.overflow = '';
+          document.documentElement.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.width = '';
+        };
+      }, [selectedService]);
+      
+
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
                                 <button 
@@ -31,17 +55,18 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ selectedService, setSelecte
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
             >
-                <div className="relative">
+                <div className="flex flex-col md:flex-row gap-0 md:gap-5">
                     <img 
                         src={selectedService.image} 
                         alt={selectedService.title}
-                        className="w-full h-64 object-cover"
+                        className="w-100 h-full object-cover"
                     />
-                </div>
-                <div className="p-8">
+                    <div className='p-4 mt-auto md:mt-30'>
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">{selectedService.title}</h2>
                     <p className="text-gray-600 mb-6">{selectedService.description}</p>
-                    
+                    </div>
+                </div>
+                <div className="p-8">
                     <div className="space-y-8">
                         <div>
                             <h3 className="text-xl font-semibold text-gray-900 mb-3">Offerings</h3>
@@ -52,20 +77,6 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ selectedService, setSelecte
                                             {index + 1}
                                         </span>
                                         <p className="text-gray-600 text-sm">{offerings}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 className="text-xl font-semibold text-gray-900 mb-3">Target Audience</h3>
-                            <div className="space-y-3">
-                                {selectedService.targetAudience.map((step: string, index: number) => (
-                                    <div key={index} className="flex items-start">
-                                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-sm mr-3">
-                                            {index + 1}
-                                        </div>
-                                        <p className="text-gray-600 text-sm">{step}</p>
                                     </div>
                                 ))}
                             </div>

@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import image1 from '../assets/service.image1.jpg'
-import image2 from '../assets/service.image2.jpg'
+import image1 from '../assets/service.construct.jpeg'
+import image2 from '../assets/service.estate.jpeg'
 import image3 from '../assets/service.image3.jpg'
-import image4 from '../assets/service.image4.jpg'
-import serviceFood from '../assets/service.food.jpg'
-import serviceSoftware from '../assets/service.soft.jpg'
-import serviceConsult from '../assets/service.consult.jpg'
-import serviceCare from '../assets/service.care.jpg'
-import serviceMotors from '../assets/service.car.jpg'
-import serviceFarm from '../assets/service.farm.jpg'
-import serviceGraphics from '../assets/service.graphics.jpg'
+import image4 from '../assets/service.tech.jpeg'
+import serviceFood from '../assets/service.food.jpeg'
+import serviceSoftware from '../assets/service.soft.jpeg'
+import serviceConsult from '../assets/service.consult.jpeg'
+import serviceCare from '../assets/service.care.jpeg'
+import serviceMotors from '../assets/service.car.jpeg'
+import serviceFarm from '../assets/service.farm.jpeg'
+import serviceGraphics from '../assets/service.graphics.jpeg'
 import { Link } from 'react-router-dom'
 import ServiceModal from '../components/ServiceModal'
 
@@ -248,7 +248,7 @@ const Services = () => {
                     key={index}
                     onClick={() => setSelectedService(service)}
                 >
-                    <div className="relative h-48">
+                    <div className="relative h-60">
                         <img 
                             src={service.image} 
                             alt={service.title} 
@@ -259,9 +259,6 @@ const Services = () => {
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
                         <p className="text-gray-600 text-sm line-clamp-3">{service.description}</p>
                     </div>
-                    <button className='text-primary text-sm m-5 underline'>
-                    View More
-                </button>
                 </motion.div>
                 
                 ))}
