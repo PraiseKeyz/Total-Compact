@@ -16,7 +16,7 @@ const Partnerships = () => {
             description: 'We acquire distressed properties, renovate them, and resell at market value',
             minimumCommitment: '$250,000',
             riskLevel: 'Moderate',
-            expectedROI: '20% per investment cycle',
+            expectedROI: '10% per investment cycle',
             timeframe: '3-7 years'
         },
         {
@@ -24,7 +24,7 @@ const Partnerships = () => {
             description: 'Invest in buildings we construct or redevelop from scratch',
             minimumCommitment: '$50,000',
             riskLevel: 'Low to Moderate',
-            expectedROI: '20% per investment cycle',
+            expectedROI: '10% per investment cycle',
             timeframe: '1-3 years'
         }
     ];
@@ -32,7 +32,7 @@ const Partnerships = () => {
     const investmentSteps = [
         'You partner with us',
         'We manage the rist',
-        'You earn 20% returns'
+        'You earn 10% returns'
     ];
 
     return (
