@@ -60,7 +60,7 @@ const Header = () => {
                         <div className="flex items-center justify-center md:justify-start space-x-4">
                             <a href="#" className="text-white hover:text-gray-300"><FaFacebook /></a>
                             <a href="#" className="text-white hover:text-gray-300"><FaTwitter /></a>
-                            <a href="#" className="text-white hover:text-gray-300"><FaInstagram /></a>
+                            <a href="https://www.instagram.com/totalcompactlimited" className="text-white hover:text-gray-300"><FaInstagram /></a>
                         </div>
                     </div>
                 </div>
