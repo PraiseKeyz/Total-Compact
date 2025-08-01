@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
-import herosection from '../assets/about.herosection.jpg';
-import { FaHome, FaHandshake, FaChartLine } from 'react-icons/fa';
-import image1 from '../assets/about.image1.jpg';
-import image2 from '../assets/about.image3.jpg';
+import { motion } from "framer-motion";
+import herosection from "../assets/about.herosection.jpg";
+import { FaHome, FaHandshake, FaChartLine } from "react-icons/fa";
+import image1 from "../assets/about.image1.jpg";
+import image2 from "../assets/about.image3.jpg";
 
 const About = () => {
   return (
@@ -22,7 +22,11 @@ const About = () => {
             className="relative h-full"
           >
             <div className="absolute inset-0 bg-black/60 bg-blend-overlay" />
-            <img src={herosection} alt="About Us Hero" className="w-full h-full object-cover" />
+            <img
+              src={herosection}
+              alt="About Us Hero"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
@@ -37,7 +41,8 @@ const About = () => {
                 About Us
               </h1>
               <p className="text-xl text-white/90 text-left max-w-2xl">
-                With over decades of excellence in real estate, we transform your vision into reality.
+                With over decades of excellence in real estate, we transform
+                your vision into reality.
               </p>
             </motion.div>
           </div>
@@ -63,9 +68,13 @@ const About = () => {
               viewport={{ once: true }}
             >
               <span className="h-2.5 w-2.5 bg-tertiary rounded-full animate-pulse"></span>
-              <span className="text-tertiary font-semibold tracking-wide text-sm">OUR JOURNEY</span>
+              <span className="text-tertiary font-semibold tracking-wide text-sm">
+                OUR JOURNEY
+              </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Story of Growth</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Our Story of Growth
+            </h2>
             <div className="w-24 h-1 bg-tertiary mx-auto rounded-full mb-8"></div>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -94,24 +103,44 @@ const About = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900">Building Dreams Since 2005</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">
+                  Building Dreams Since 2005
+                </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  TC enterprises started since 2005, Upgraded to TOTAL COMPACT LIMITED 2018 with the intention to serve our valuable customers better
+                  TC enterprises started since 2005, Upgraded to TOTAL COMPACT
+                  LIMITED 2018 with the intention to serve our valuable
+                  customers better
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Founded with a vision to revolutionize the real estate industry, Total Compact has evolved from a small local agency to a trusted name in property solutions. Our journey has been marked by unwavering commitment to excellence and innovation.
+                  Founded with a vision to revolutionize the real estate
+                  industry, Total Compact has evolved from a small local agency
+                  to a trusted name in property solutions. Our journey has been
+                  marked by unwavering commitment to excellence and innovation.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  We've helped countless families find their dream homes and assisted investors in making informed decisions. Our success is built on understanding our clients' unique needs and delivering personalized solutions.
+                  We've helped countless families find their dream homes and
+                  assisted investors in making informed decisions. Our success
+                  is built on understanding our clients' unique needs and
+                  delivering personalized solutions.
                 </p>
                 <div className="grid grid-cols-2 gap-6 mt-8">
                   <div className="border-l-4 border-tertiary pl-4">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Our Expertise</h4>
-                    <p className="text-gray-600">Specialized in residential and commercial properties with a focus on sustainable development.</p>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                      Our Expertise
+                    </h4>
+                    <p className="text-gray-600">
+                      Specialized in residential and commercial properties with
+                      a focus on sustainable development.
+                    </p>
                   </div>
                   <div className="border-l-4 border-primary pl-4">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Our Promise</h4>
-                    <p className="text-gray-600">Committed to transparency, integrity, and exceptional service in every transaction.</p>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                      Our Promise
+                    </h4>
+                    <p className="text-gray-600">
+                      Committed to transparency, integrity, and exceptional
+                      service in every transaction.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -129,8 +158,13 @@ const About = () => {
               <div className="w-14 h-14 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6">
                 <FaHome className="text-2xl text-tertiary" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-600">To provide exceptional real estate services while maintaining the highest standards of integrity and professionalism.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Our Mission
+              </h3>
+              <p className="text-gray-600">
+                To provide exceptional real estate services while maintaining
+                the highest standards of integrity and professionalism.
+              </p>
             </motion.div>
             <motion.div
               className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
@@ -143,8 +177,13 @@ const About = () => {
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                 <FaChartLine className="text-2xl text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-600">To be the leading real estate company known for innovation, reliability, and customer satisfaction.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Our Vision
+              </h3>
+              <p className="text-gray-600">
+                To be the leading real estate company known for innovation,
+                reliability, and customer satisfaction.
+              </p>
             </motion.div>
             <motion.div
               className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
@@ -157,8 +196,13 @@ const About = () => {
               <div className="w-14 h-14 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6">
                 <FaHandshake className="text-2xl text-tertiary" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Values</h3>
-              <p className="text-gray-600">Integrity, Excellence, Innovation, and Customer-First approach guide everything we do.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Our Values
+              </h3>
+              <p className="text-gray-600">
+                Integrity, Excellence, Innovation, and Customer-First approach
+                guide everything we do.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -183,14 +227,17 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-3xl font-bold text-gray-900">Our Company Profile</h3>
+              <h3 className="text-3xl font-bold text-gray-900">
+                Our Company Profile
+              </h3>
               <p className="text-gray-600 leading-relaxed text-lg">
-              Total Compact Limited (RC1501706) is a registered Nigerian company
-founded in 2003, with over 20+ years of active operations delivering value
-across multiple industries. We specialize in providing integrated, end-toend solutions through our ten distinct divisions, offering services in
-construction, real estate, technology, agriculture, design, automotive,
-training, fashion, hospitality, and consultancy.
-
+                Total Compact Limited (RC1501706) is a registered Nigerian
+                company founded in 2003, with over 20+ years of active
+                operations delivering value across multiple industries. We
+                specialize in providing integrated, end-toend solutions through
+                our ten distinct divisions, offering services in construction,
+                real estate, technology, agriculture, design, automotive,
+                training, fashion, hospitality, and consultancy.
               </p>
               <a
                 href="/company-profile.pdf"
@@ -242,12 +289,17 @@ training, fashion, hospitality, and consultancy.
               viewport={{ once: true }}
             >
               <span className="h-2.5 w-2.5 bg-tertiary rounded-full animate-pulse"></span>
-              <span className="text-tertiary font-semibold tracking-wide text-sm">OUR PROCESS</span>
+              <span className="text-tertiary font-semibold tracking-wide text-sm">
+                OUR PROCESS
+              </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How We Work</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              How We Work
+            </h2>
             <div className="w-24 h-1 bg-tertiary mx-auto rounded-full mb-8"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our streamlined process ensures a smooth and efficient experience from initial consultation to final handover.
+              Our streamlined process ensures a smooth and efficient experience
+              from initial consultation to final handover.
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
@@ -263,14 +315,27 @@ training, fashion, hospitality, and consultancy.
                   <div className="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-tertiary">01</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Initial Consultation</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Initial Consultation
+                  </h3>
                   <p className="text-gray-600">
-                    We begin by understanding your needs, preferences, and budget to create a tailored property search strategy.
+                    We begin by understanding your needs, preferences, and
+                    budget to create a tailored property search strategy.
                   </p>
                 </div>
                 <div className="absolute -right-4 top-1/2 w-8 h-8 bg-tertiary rounded-full hidden lg:flex items-center justify-center z-10 -translate-y-1/2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </motion.div>
@@ -285,14 +350,27 @@ training, fashion, hospitality, and consultancy.
                   <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-primary">02</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Property Search</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Property Search
+                  </h3>
                   <p className="text-gray-600">
-                    Our experts search and shortlist properties that match your criteria, saving you time and effort.
+                    Our experts search and shortlist properties that match your
+                    criteria, saving you time and effort.
                   </p>
                 </div>
                 <div className="absolute -right-4 top-1/2 w-8 h-8 bg-primary rounded-full hidden lg:flex items-center justify-center z-10 -translate-y-1/2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </motion.div>
@@ -307,9 +385,12 @@ training, fashion, hospitality, and consultancy.
                   <div className="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-tertiary">03</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Property Tours</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Property Tours
+                  </h3>
                   <p className="text-gray-600">
-                    Schedule viewings of selected properties with our experienced agents who will guide you through each option.
+                    Schedule viewings of selected properties with our
+                    experienced agents who will guide you through each option.
                   </p>
                 </div>
               </motion.div>
@@ -324,14 +405,27 @@ training, fashion, hospitality, and consultancy.
                   <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-primary">04</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Negotiation</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Negotiation
+                  </h3>
                   <p className="text-gray-600">
-                    We handle all negotiations to ensure you get the best possible deal and terms for your chosen property.
+                    We handle all negotiations to ensure you get the best
+                    possible deal and terms for your chosen property.
                   </p>
                 </div>
                 <div className="absolute -right-4 top-1/2 w-8 h-8 bg-primary rounded-full hidden lg:flex items-center justify-center z-10 -translate-y-1/2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </motion.div>
@@ -346,14 +440,27 @@ training, fashion, hospitality, and consultancy.
                   <div className="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-tertiary">05</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Documentation</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Documentation
+                  </h3>
                   <p className="text-gray-600">
-                    Our team manages all legal documentation and paperwork, ensuring a smooth and compliant transaction process.
+                    Our team manages all legal documentation and paperwork,
+                    ensuring a smooth and compliant transaction process.
                   </p>
                 </div>
                 <div className="absolute -right-4 top-1/2 w-8 h-8 bg-tertiary rounded-full hidden lg:flex items-center justify-center z-10 -translate-y-1/2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </motion.div>
@@ -368,9 +475,12 @@ training, fashion, hospitality, and consultancy.
                   <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-primary">06</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Final Handover</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Final Handover
+                  </h3>
                   <p className="text-gray-600">
-                    Complete the transaction and receive ongoing support for a seamless transition to your new property.
+                    Complete the transaction and receive ongoing support for a
+                    seamless transition to your new property.
                   </p>
                 </div>
               </motion.div>
@@ -398,7 +508,9 @@ training, fashion, hospitality, and consultancy.
               <div className="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-tertiary">20+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">Years Experience</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Years Experience
+              </h3>
               <p className="text-gray-600 mt-2">Industry Excellence</p>
             </motion.div>
             <motion.div
@@ -411,7 +523,9 @@ training, fashion, hospitality, and consultancy.
               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-primary">500+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">Properties Sold</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Properties Sold
+              </h3>
               <p className="text-gray-600 mt-2">Happy Clients</p>
             </motion.div>
             <motion.div
@@ -424,7 +538,9 @@ training, fashion, hospitality, and consultancy.
               <div className="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-tertiary">100%</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">Client Satisfaction</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Client Satisfaction
+              </h3>
               <p className="text-gray-600 mt-2">Trust & Quality</p>
             </motion.div>
             <motion.div
@@ -445,9 +561,7 @@ training, fashion, hospitality, and consultancy.
       </motion.section>
 
       {/* Enhanced CTA Section */}
-      <section
-        className="py-24 relative before:content-[''] before:absolute before:inset-0 before:opacity-5 before:bg-[radial-gradient(circle_at_2px_2px,#6b7280_2px,transparent_0)] before:bg-[length:20px_20px]"
-      >
+      <section className="py-24 relative before:content-[''] before:absolute before:inset-0 before:opacity-5 before:bg-[radial-gradient(circle_at_2px_2px,#6b7280_2px,transparent_0)] before:bg-[length:20px_20px]">
         <div className="container mx-auto px-4 relative">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="w-full md:w-1/2 relative">
@@ -473,7 +587,9 @@ training, fashion, hospitality, and consultancy.
                     Ready for Your Dream Home?
                   </h2>
                   <p className="text-white/90 text-lg mb-8">
-                    Transform your vision into reality. Our expert team is here to guide you through every step of finding your perfect luxury property.
+                    Transform your vision into reality. Our expert team is here
+                    to guide you through every step of finding your perfect
+                    luxury property.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button className="bg-white text-primary font-semibold py-4 px-8 rounded-xl hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-white/20 hover:shadow-2xl transform hover:-translate-y-1">
