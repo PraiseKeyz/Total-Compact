@@ -315,12 +315,6 @@ const HomePage = () => {
                                 location: "Beside former Governor Wada's house. Lokoja.",
                                 image: project2,
                                 price: "₦250M"
-                            },
-                            {
-                                title: "Seaside Residences",
-                                location: "Downtown, NewYork",
-                                image: hero1,
-                                price: "$3.5M"
                             }
                         ].map((project, index) => (
                             <motion.div

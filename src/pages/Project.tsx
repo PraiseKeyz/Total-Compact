@@ -1,84 +1,65 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
-import project1 from '../assets/service.image1.jpg';
-import project2 from '../assets/service.image1.jpg';
-import project3 from '../assets/service.image1.jpg';
+import { useState, useEffect } from 'react';
+// import { FaStar } from 'react-icons/fa';
+import herosection from '../assets/service.image1.jpg';
 import ProjectModal from '../components/ProjectModal';
+import axios from 'axios';
 
-interface Testimonial {
-    text: string;
-    author: string;
-    position: string;
-}
+// interface Testimonial {
+//     text: string;
+//     author: string;
+//     position: string;
+// }
 
 interface Project {
-    id: number;
-    title: string;
-    type: string;
-    service: string;
-    image: string;
-    objectives: string;
-    process: string[];
-    outcome: string;
-    testimonial: Testimonial;
-}
+    _id: string;
+    name: string;
+    description: string;
+    status: string;
+    projectType: string;
+    features: string[];
+    location: {
+      address: string;
+      city: string;
+      state: string;
+    };
+    images: {
+        url: string;
+        caption: string;
+        _id?: string;
+      }[];
+    createdAt: string;
+  }
 
-const projects: Project[] = [
-    {
-        id: 1,
-        title: 'Modern Office Complex',
-        type: 'Commercial',
-        service: 'Real Estate Development',
-        image: project1,
-        objectives: 'Create a sustainable, modern office space that promotes productivity and well-being.',
-        process: ['Site Analysis', 'Design Development', 'Construction Management', 'Quality Assurance'],
-        outcome: 'A LEED-certified building with 95% occupancy rate within 3 months of completion.',
-        testimonial: {
-            text: 'The team delivered beyond our expectations, creating a space that truly embodies our corporate vision.',
-            author: 'John Smith',
-            position: 'CEO, Tech Solutions Inc.'
-        }
-    },
-    {
-        id: 2,
-        title: 'Luxury Residential Complex',
-        type: 'Residential',
-        service: 'Property Management',
-        image: project2,
-        objectives: 'Develop an exclusive residential complex with premium amenities and sustainable features.',
-        process: ['Market Research', 'Architectural Planning', 'Development', 'Property Management Setup'],
-        outcome: 'Successfully launched and fully occupied within 6 months, with high tenant satisfaction rates.',
-        testimonial: {
-            text: 'Outstanding attention to detail and commitment to quality throughout the entire project.',
-            author: 'Sarah Johnson',
-            position: 'Property Manager'
-        }
-    },
-    {
-        id: 3,
-        title: 'Smart City Integration',
-        type: 'Commercial',
-        service: 'Real Estate Development',
-        image: project3,
-        objectives: 'Implement smart technology solutions across existing commercial properties.',
-        process: ['Technology Assessment', 'Infrastructure Planning', 'Implementation', 'System Integration'],
-        outcome: 'Reduced operating costs by 30% and improved tenant satisfaction by 45%.',
-        testimonial: {
-            text: 'Their innovative approach to smart building solutions has transformed our properties.',
-            author: 'Michael Chen',
-            position: 'Director of Operations'
-        }
-    }
-];
 
 const Project = () => {
     const [filter, setFilter] = useState('all');
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [projects, setProjects] = useState<Project[]>([]);
+
+    const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
+
+    useEffect(() => {
+      const fetchProject = async () => {
+        try {
+          const token = localStorage.getItem("token");
+          const response = await axios.get(`${API_BASE_URL}/api/v1/projects`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setProjects(response.data.data);
+        } catch (error) {
+          console.error("Error fetching user:", error);
+        }
+      };
+      fetchProject();
+    }, [])
+
 
     const filteredProjects = projects.filter(project => 
-        filter === 'all' || project.type.toLowerCase() === filter.toLowerCase() || 
-        project.service.toLowerCase().includes(filter.toLowerCase())
+        filter === 'all' || project.projectType.toLowerCase() === filter.toLowerCase() || 
+        project.status.toLowerCase().includes(filter.toLowerCase())
     );
 
     return (
@@ -94,7 +75,7 @@ const Project = () => {
                 <div 
                     className="absolute inset-0 z-0" 
                     style={{
-                        backgroundImage: `url(${project1})`,
+                        backgroundImage: `url(${herosection})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
@@ -123,7 +104,7 @@ const Project = () => {
             <section className="py-12 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap gap-4 justify-center">
-                        {['all', 'Commercial', 'Residential', 'Real Estate Development', 'Property Management'].map((type) => (
+                        {['all', 'Commercial', 'Residential', 'Mixed-Use', 'Industrial'].map((type) => (
                             <motion.button
                                 key={type}
                                 onClick={() => setFilter(type)}
@@ -144,7 +125,7 @@ const Project = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredProjects.map((project) => (
                             <motion.div
-                                key={project.id}
+                                key={project._id}
                                 className="bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
                                 onClick={() => setSelectedProject(project)}
                                 initial={{ opacity: 0, y: 20 }}
@@ -155,19 +136,20 @@ const Project = () => {
                             >
                                 <div className="relative overflow-hidden">
                                     <img 
-                                        src={project.image} 
-                                        alt={project.title}
+                                        src={`${API_BASE_URL}/${project.images[0]?.url.replace(/\\/g, '/')}`}
+                                        alt={project.name}
+                                        crossOrigin="anonymous"
                                         className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h3>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.name}</h3>
                                     <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                                        <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">{project.type}</span>
-                                        <span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full">{project.service}</span>
+                                        <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">{project.projectType}</span>
+                                        <span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full">{project.status}</span>
                                     </div>
-                                    <p className="text-gray-600 line-clamp-3">{project.objectives}</p>
+                                    <p className="text-gray-600 line-clamp-3">{project.description}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -176,7 +158,7 @@ const Project = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section className="py-24 bg-white">
+            {/* <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-16"
@@ -224,7 +206,7 @@ const Project = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Modal */}
             {selectedProject && ( <ProjectModal selectedProject={selectedProject} setSelectedProject={setSelectedProject} />

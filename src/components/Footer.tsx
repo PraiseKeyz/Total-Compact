@@ -59,18 +59,24 @@ const Footer = () => {
                     <div>
                         <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                         <div className="space-y-4">
-                            <p className="flex items-center text-gray-400">
-                                <FaMapMarkerAlt className="mr-2" />
-                                No. 4 South Link, Beside Gbose Autos, Asa-dam Road, Ilorin, Kwara State
-                            </p>
-                            <p className="flex items-center text-gray-400">
+                            <div className="space-y-3">
+                                <p className="flex items-start text-gray-400">
+                                    <FaMapMarkerAlt className="mr-2 mt-1 flex-shrink-0" />
+                                    <span>No. 4 South Link, Beside Gbose Autos, Asa-dam Road, Ilorin, Kwara State</span>
+                                </p>
+                                <p className="flex items-start text-gray-400">
+                                    <FaMapMarkerAlt className="mr-2 mt-1 flex-shrink-0" />
+                                    <span>No 32, Omoleran Papa-ajao street, Lagos state</span>
+                                </p>
+                            </div>
+                            <a href="tel:+2347060858436" className="flex items-center text-gray-400">
                                 <FaPhone className="mr-2" />
                                 +234 7060858436
-                            </p>
-                            <p className="flex items-center text-gray-400">
+                            </a>
+                            <a href="mailto:info@totalcompact.com" className="flex items-center text-gray-400">
                                 <FaEnvelope className="mr-2" />
                                 info@totalcompact.com
-                            </p>
+                            </a>
                         </div>
                     </div>
                 </div>
