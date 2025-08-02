@@ -244,7 +244,7 @@ const About = () => {
                 download="Total_Compact_Limited_Profile.pdf"
                 className="inline-block bg-primary text-white font-semibold py-4 px-8 rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1"
               >
-                Download Our Profile
+                Checkout Our Profile
               </a>
             </motion.div>
             <motion.div
