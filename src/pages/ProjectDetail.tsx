@@ -119,19 +119,34 @@ const ProjectDetail = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <motion.section 
+        className="relative h-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         {/* Background Image */}
-        <div className="absolute inset-0">
+        <motion.div 
+          className="absolute inset-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
           <img
             src={`${project.images[0]?.url}`}
             alt={project.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
-        </div>
+          <div className="absolute inset-0 bg-black/30"></div>
+        </motion.div>
 
         {/* Navigation */}
-        <div className="relative z-10 p-6">
+        <motion.div 
+          className="relative z-10 p-6"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
           <button
             onClick={() => navigate("/projects")}
             className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white/30 transition-all duration-200"
@@ -139,34 +154,56 @@ const ProjectDetail = () => {
             <FaArrowLeft className="w-4 h-4" />
             Back to Projects
           </button>
-        </div>
+        </motion.div>
 
         {/* Hero Content */}
         <div className="relative z-10 flex items-center h-full p-6 sm:p-8 lg:p-12">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-4">
+            <motion.div 
+              className="flex items-center gap-3 mb-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
               <span className="px-3 py-1 bg-blue-500/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
                 {project.projectType}
               </span>
               <span className="px-3 py-1 bg-green-500/90 backdrop-blur-sm rounded-full text-sm font-medium text-white">
                 {project.status}
               </span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            </motion.div>
+            <motion.h1 
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+            >
               {project.name}
-            </h1>
+            </motion.h1>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Project Details Section */}
-      <section className="py-16 bg-white">
+      <motion.section 
+        className="py-16 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2">
               {/* Description */}
-              <div className="mb-12">
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="flex items-center gap-3 mb-6">
                   <FaFileAlt className="text-purple-600 text-2xl" />
                   <h2 className="text-3xl font-bold text-gray-900">
@@ -178,10 +215,16 @@ const ProjectDetail = () => {
                     {project.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Location */}
-              <div className="mb-12">
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 <div className="flex items-center gap-3 mb-6">
                   <FaMapMarkerAlt className="text-blue-600 text-2xl" />
                   <h2 className="text-3xl font-bold text-gray-900">Location</h2>
@@ -191,10 +234,16 @@ const ProjectDetail = () => {
                     {`${project.location.address}, ${project.location.city}, ${project.location.state}${project.location.zipCode ? `, ${project.location.zipCode}` : ""}`}
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Project Details Grid */}
-              <div className="mb-12">
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">
                   Project Details
                 </h2>
@@ -271,11 +320,17 @@ const ProjectDetail = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Features */}
               {project.features && project.features.length > 0 && (
-                <div className="mb-12">
+                <motion.div 
+                  className="mb-12"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
                   <div className="flex items-center gap-3 mb-6">
                     <FaBuilding className="text-indigo-600 text-2xl" />
                     <h2 className="text-3xl font-bold text-gray-900">
@@ -294,12 +349,18 @@ const ProjectDetail = () => {
                       ))}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )}
 
               {/* Image Gallery */}
               {project.images.length > 1 && (
-                <div className="mb-12">
+                <motion.div 
+                  className="mb-12"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
                   <h2 className="text-3xl font-bold text-gray-900 mb-8">
                     Gallery
                   </h2>
@@ -309,6 +370,10 @@ const ProjectDetail = () => {
                         key={index}
                         className="relative cursor-pointer group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                         onClick={() => setSelectedImage(image)}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ y: -5 }}
                       >
                         <img
@@ -327,11 +392,17 @@ const ProjectDetail = () => {
                       </motion.div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               )}
 
               {/* Project Timeline */}
-              <div className="mb-12">
+              <motion.div 
+                className="mb-12"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
                   Project Timeline
                 </h2>
@@ -355,7 +426,7 @@ const ProjectDetail = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Sidebar */}
@@ -417,7 +488,7 @@ const ProjectDetail = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Image Modal */}
       {selectedImage && (
