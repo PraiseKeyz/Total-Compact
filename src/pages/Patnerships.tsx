@@ -33,7 +33,7 @@ const Partnerships = () => {
 
   const investmentSteps = [
     "You partner with us",
-    "We manage the rist",
+    "We manage the risk",
     "You earn 10% returns",
   ];
 

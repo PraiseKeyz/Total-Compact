@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import image1 from "../assets/contact.image1.jpg";
+import axios from "axios";
+import SuccessModal from "../components/SuccessModal";
 
 const Contacts = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -19,10 +25,28 @@ const Contacts = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    setIsLoading(true);
+    try {
+      const response = await axios.post(
+      `${API_BASE_URL}/api/v1/contact`,
+        formData,
+      );
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+      console.log(response.data.message);
+      setShowSuccessModal(true);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -92,6 +116,18 @@ const Contacts = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary transition duration-200"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
                   Message
                 </label>
                 <textarea
@@ -105,9 +141,21 @@ const Contacts = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary cursor-pointer text-white font-semibold py-3 rounded-lg hover:bg-primary/90 transition duration-200 transform hover:-translate-y-1"
+                disabled={isLoading}
+                className={`w-full font-semibold py-3 rounded-lg transition duration-200 transform ${
+                  isLoading
+                    ? "bg-gray-400 cursor-not-allowed opacity-60"
+                    : "bg-primary cursor-pointer text-white hover:bg-primary/90 hover:-translate-y-1"
+                }`}
               >
-                Send Message
+                {isLoading ? (
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    <span>Sending...</span>
+                  </div>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </div>
@@ -178,6 +226,11 @@ const Contacts = () => {
           </div>
         </div>
       </div>
+      <SuccessModal 
+        isOpen={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+        message="Your message has been sent successfully! We'll get back to you soon."
+      />
     </div>
   );
 };
