@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import herosection from "../assets/about.herosection.jpg";
 import { FaHome, FaHandshake, FaChartLine } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import image1 from "../assets/about.image1.jpg";
 import image2 from "../assets/about.image3.jpg";
 
@@ -312,7 +313,7 @@ const About = () => {
                 transition={{ delay: 0.1 }}
               >
                 <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
-                  <div className="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
+                  <div className="w-20 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-tertiary">01</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -347,7 +348,7 @@ const About = () => {
                 transition={{ delay: 0.2 }}
               >
                 <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-20 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-primary">02</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -382,7 +383,7 @@ const About = () => {
                 transition={{ delay: 0.3 }}
               >
                 <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
-                  <div className="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
+                  <div className="w-20 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-tertiary">03</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -402,7 +403,7 @@ const About = () => {
                 transition={{ delay: 0.4 }}
               >
                 <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-20 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-primary">04</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -437,7 +438,7 @@ const About = () => {
                 transition={{ delay: 0.5 }}
               >
                 <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
-                  <div className="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
+                  <div className="w-20 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-tertiary">05</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -472,7 +473,7 @@ const About = () => {
                 transition={{ delay: 0.6 }}
               >
                 <div className="bg-white p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-20 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                     <span className="text-3xl font-bold text-primary">06</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -505,8 +506,8 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <div className="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold text-tertiary">20+</span>
+              <div className="w-20 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-tertiary px-2">20+</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900">
                 Years Experience
@@ -520,7 +521,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto px-4 mb-6">
                 <span className="text-3xl font-bold text-primary">500+</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900">
@@ -535,7 +536,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <div className="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-tertiary">100%</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900">
@@ -550,7 +551,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-primary">24/7</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900">Support</h3>
@@ -592,12 +593,11 @@ const About = () => {
                     luxury property.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
+                    <Link to="/contact">
                     <button className="bg-white text-primary font-semibold py-4 px-8 rounded-xl hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-white/20 hover:shadow-2xl transform hover:-translate-y-1">
                       Start Your Journey
                     </button>
-                    <button className="bg-black/20 text-white font-semibold py-4 px-8 rounded-xl hover:bg-black/30 transition-all duration-300 border border-white/20 hover:border-white/30 hover:shadow-lg">
-                      Learn More
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

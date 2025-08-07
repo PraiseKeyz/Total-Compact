@@ -2,7 +2,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaFacebook,
-  FaTwitter,
   FaInstagram,
   FaMapMarkerAlt,
 } from "react-icons/fa";
@@ -21,12 +20,12 @@ const Footer = () => {
               exceptional real estate services with a focus on your needs.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.facebook.com/share/16mqT6hWDh/" className="text-gray-400 hover:text-white">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              {/* <a href="#" className="text-gray-400 hover:text-white">
                 <FaTwitter size={20} />
-              </a>
+              </a> */}
               <a
                 href="https://www.instagram.com/totalcompactlimited"
                 className="text-gray-400 hover:text-white"

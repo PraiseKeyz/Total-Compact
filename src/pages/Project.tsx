@@ -39,6 +39,7 @@ interface Project {
 const Project = () => {
   const [filter, setFilter] = useState("all");
   const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
@@ -46,6 +47,7 @@ const Project = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
+        setLoading(true);
         const token = localStorage.getItem("token");
         const response = await axios.get(`${API_BASE_URL}/api/v1/projects`, {
           headers: {
@@ -55,6 +57,8 @@ const Project = () => {
         setProjects(response.data.data);
       } catch (error) {
         console.error("Error fetching user:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchProject();
@@ -134,54 +138,63 @@ const Project = () => {
       {/* Projects Grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project._id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
-                onClick={() => navigate(`/projects/${project._id}`)}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={`${project.images[0]?.url}`}
-                    alt={project.name}
-                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {project.name}
-                  </h3>
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                    <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">
-                      {project.projectType}
-                    </span>
-                    <span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full">
-                      {project.status}
-                    </span>
+          {loading ? (
+            <div className="flex items-center justify-center min-h-[400px]">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                <p className="text-gray-600 text-lg">Loading projects...</p>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project) => (
+                <motion.div
+                  key={project._id}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
+                  onClick={() => navigate(`/projects/${project._id}`)}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={`${project.images[0]?.url}`}
+                      alt={project.name}
+                      className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300"></div>
                   </div>
-                  <p className="text-gray-600 line-clamp-3 mb-4">
-                    {project.description}
-                  </p>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/projects/${project._id}`);
-                    }}
-                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                  >
-                    View Details
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {project.name}
+                    </h3>
+                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">
+                        {project.projectType}
+                      </span>
+                      <span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full">
+                        {project.status}
+                      </span>
+                    </div>
+                    <p className="text-gray-600 line-clamp-3 mb-4">
+                      {project.description}
+                    </p>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/projects/${project._id}`);
+                      }}
+                      className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                    >
+                      View Details
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
